@@ -34,6 +34,12 @@ public class PlayerTest {
     assertEquals(card1, player1.getHand()[0]);
   }
 
+  @Test 
+  public void canGetHandValue(){
+    assertEquals(5, player1.getHandValue());
+  }
+
+
   @Test
   public void canPrintHand(){
     assertEquals("Two of Clubs, Three of Spades", player1.printHand());

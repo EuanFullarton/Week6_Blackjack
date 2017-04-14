@@ -23,6 +23,10 @@ public class Player {
     return this.hand;
   }
 
+  public int getHandValue(){
+    return this.hand[0].getNumber() + this.hand[1].getNumber();
+  }
+
   public String printHand(){
     return this.hand[0].toString() + ", " + this.hand[1].toString();
   }
