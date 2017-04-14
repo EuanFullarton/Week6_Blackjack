@@ -7,7 +7,6 @@ public class Game {
 
   private ArrayList<Player> players = new ArrayList<Player>();
   private static ArrayList<Card> deck = new ArrayList<Card>();
-  private WinChecker winChecker = new WinChecker();
 
   public void buildDeck(){
     for (int i=1; i<14; i++) {
