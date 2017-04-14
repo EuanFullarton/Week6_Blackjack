@@ -22,12 +22,6 @@ public class WinChecker {
     }
 
     return maxPlayer.getName() + " wins";
-    // for(Player p : players) {
-    //   handTotals[] += p.getHandValue();
-    // }
-    // Collections.sort(handTotals);
-    // winner = handTotals.pop();
-    // System.out.println(winner + "wins");
   }
 
 }
