@@ -28,7 +28,7 @@ public class Player {
   }
 
   public int getHandValue(){
-    return this.hand[0].getNumber() + this.hand[1].getNumber() + this.hand[2].getNumber()];
+    return this.hand[0].getNumber() + this.hand[1].getNumber() + this.hand[2].getNumber();
   }
 
   public String printHand(){
