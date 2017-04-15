@@ -59,18 +59,21 @@ public class PlayerTest {
   @Test
   public void canBeDealtThirdCard(){
     player1.setHand(card1, card2);
-    player2.setHand(card1, card1);
-    player2.hitMe(card3);
-    assertEquals(9, player2.getHandValue());
+    player1.hitMe(card3);
+    assertEquals(10, player1.getHandValue());
   }
 
   @Test
   public void canBeDealtFourthCard(){
-    player1.setHand(card1, card2);
-    player2.setHand(card1, card1);
-    player2.hitMe(card3);
-    player2.hitMe(card4);
-    assertEquals(15, player2.getHandValue());
+    player1.setHand(card1, card1);
+    player1.hitMe(card3);
+    player1.hitMe(card4);
+    assertEquals(15, player1.getHandValue());
   }
+
+  // @Test
+  // public void errorIfHitAttemptedWhenOver21() {
+
+  // }
 
 }
