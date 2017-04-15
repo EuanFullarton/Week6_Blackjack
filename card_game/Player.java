@@ -20,7 +20,10 @@ public class Player {
   }
 
   public void hitMe(Card newCard){
-    if ((this.hand[2] != null) && (this.getHandValue() < 21)) {
+    // if (this.getHandValue() > 21) {
+    //   System.out.println("Burst!");
+    // }
+    if (this.hand[2] != null) {
       this.hand[3] = newCard; 
     }
     else {

@@ -72,8 +72,12 @@ public class PlayerTest {
   }
 
   // @Test
-  // public void errorIfHitAttemptedWhenOver21() {
-
+  // public void cannotHitWhenOver21() {
+  //   player1.setHand(card4, card4);
+  //   player1.hitMe(card4);
+  //   player1.hitMe(card4);
+  //   player1.hitMe(card4);
+  //   assertEquals("Burst!", player1.getHandValue());
   // }
 
 }

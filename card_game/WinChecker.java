@@ -24,5 +24,18 @@ public class WinChecker {
     return maxPlayer.getName() + " wins";
   }
 
+  public String closestToTwentyOne(){
+
+    Player maxPlayer = players.get(0);
+
+    for(Player p : players) {
+      if((p.getHandValue() > maxPlayer.getHandValue()) && p.getHandValue() <= 21){
+        maxPlayer = p;
+      }
+    }
+
+    return maxPlayer.getName() + " wins";
+  }
+
 
 }
