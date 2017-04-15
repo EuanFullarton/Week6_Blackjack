@@ -54,12 +54,12 @@ public class PlayerTest {
     assertEquals("Two of Clubs, Three of Spades", player1.printHand());
   }
 
-  // @Test
-  // public void canBeDealtAnotherCard(){
-  //   player1.setHand(card1, card2);
-  //   player2.setHand(card1, card1);
-  //   player2.hitMe(card3);
-  //   assertEquals("Player2 wins", winChecker.highestHandTotal());
-  // }
+  @Test
+  public void canBeDealtAnotherCard(){
+    player1.setHand(card1, card2);
+    player2.setHand(card1, card1);
+    player2.hitMe(card3);
+    assertEquals(9, player2.getHandValue());
+  }
 
 }

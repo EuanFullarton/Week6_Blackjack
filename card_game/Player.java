@@ -4,7 +4,7 @@ import card_game.*;
 public class Player {
 
   private String name;
-  private Card[] hand = new Card[2];
+  private Card[] hand = new Card[3];
 
   public Player(String name){
     this.name = name;
@@ -19,16 +19,21 @@ public class Player {
     this.hand[1] = card2;
   }
 
-  // public void hitMe(Card card3){
-  //   this.hand[2] = card3;
-  // }
+  public void hitMe(Card card3){
+    this.hand[2] = card3;
+  }
 
   public Card[] getHand(){
     return this.hand;
   }
 
   public int getHandValue(){
+    if (this.hand[2] != null){
+      return this.hand[0].getNumber() + this.hand[1].getNumber() + this.hand[2].getNumber();
+    }     
+    else {
       return this.hand[0].getNumber() + this.hand[1].getNumber();
+    }
   }
 
   public String printHand(){
