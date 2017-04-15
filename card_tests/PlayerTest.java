@@ -55,7 +55,7 @@ public class PlayerTest {
   }
 
   @Test
-  public void canBeDealtAnotherCard(){
+  public void canBeDealtThirdCard(){
     player1.setHand(card1, card2);
     player2.setHand(card1, card1);
     player2.hitMe(card3);
