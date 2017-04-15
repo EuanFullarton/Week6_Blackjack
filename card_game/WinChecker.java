@@ -24,4 +24,5 @@ public class WinChecker {
     return maxPlayer.getName() + " wins";
   }
 
+
 }

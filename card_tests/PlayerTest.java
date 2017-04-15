@@ -9,6 +9,8 @@ public class PlayerTest {
   Player player2;
   Card card1;
   Card card2;
+  Card card3;
+  WinChecker winChecker;
 
   @Before
   public void before(){
@@ -16,7 +18,9 @@ public class PlayerTest {
     player2 = new Player("Craig");
     card1 = new Card(2, Suit.Clubs);
     card2 = new Card(3, Suit.Spades);
+    card3 = new Card(5, Suit.Hearts);
     player1.setHand(card1, card2);
+    winChecker = new WinChecker(players);
   }
 
   @Test
@@ -43,6 +47,14 @@ public class PlayerTest {
   @Test
   public void canPrintHand(){
     assertEquals("Two of Clubs, Three of Spades", player1.printHand());
+  }
+
+  @Test
+  public void canDealAnotherCard(){
+    player1.setHand(card1, card2);
+    player2.setHand(card1, card1);
+    player2.hitMe(card3);
+    assertEquals("Player2 wins", winChecker.highestHandTotal());
   }
 
 }
