@@ -12,6 +12,7 @@ public class PlayerTest {
   Card card1;
   Card card2;
   Card card3;
+  Card card4;
   WinChecker winChecker;
 
   @Before
@@ -21,6 +22,7 @@ public class PlayerTest {
     card1 = new Card(2, Suit.Clubs);
     card2 = new Card(3, Suit.Spades);
     card3 = new Card(5, Suit.Hearts);
+    card4 = new Card(6, Suit.Diamonds);
     player1.setHand(card1, card2);
     ArrayList<Player> players = new ArrayList<Player>();
     players.add(player1);
@@ -60,6 +62,15 @@ public class PlayerTest {
     player2.setHand(card1, card1);
     player2.hitMe(card3);
     assertEquals(9, player2.getHandValue());
+  }
+
+  @Test
+  public void canBeDealtFourthCard(){
+    player1.setHand(card1, card2);
+    player2.setHand(card1, card1);
+    player2.hitMe(card3);
+    player2.hitMe(card4);
+    assertEquals(15, player2.getHandValue());
   }
 
 }
