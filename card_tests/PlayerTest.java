@@ -2,6 +2,8 @@ import card_game.*;
 
 import static org.junit.Assert.*;
 import org.junit.*;
+import java.util.*;
+
 
 public class PlayerTest {
 
@@ -20,6 +22,9 @@ public class PlayerTest {
     card2 = new Card(3, Suit.Spades);
     card3 = new Card(5, Suit.Hearts);
     player1.setHand(card1, card2);
+    ArrayList<Player> players = new ArrayList<Player>();
+    players.add(player1);
+    players.add(player2);
     winChecker = new WinChecker(players);
   }
 
