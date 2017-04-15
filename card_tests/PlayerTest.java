@@ -16,8 +16,8 @@ public class PlayerTest {
 
   @Before
   public void before(){
-    player1 = new Player("Keith");
-    player2 = new Player("Craig");
+    player1 = new Player("Player1");
+    player2 = new Player("Player2");
     card1 = new Card(2, Suit.Clubs);
     card2 = new Card(3, Suit.Spades);
     card3 = new Card(5, Suit.Hearts);
