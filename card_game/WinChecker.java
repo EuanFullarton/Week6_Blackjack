@@ -29,24 +29,47 @@ public class WinChecker {
     Player maxPlayer = players.get(0);
     Player burstPlayer = null;
     Player blackJack = null;
+    int playerHasAce = 0;
+    int playerHandTotal = 0;
 
     for(Player p : players) {
-      if  (p.getHandValue() == 21) {
+
+      playerHandTotal = p.getHandValue();
+      
+      if  (playerHandTotal == 21) {
         blackJack = p;
       }
-      else if((p.getHandValue() > maxPlayer.getHandValue()) && p.getHandValue() <= 21) {
+      else if ((playerHandTotal > maxPlayer.getHandValue()) && (playerHandTotal <= 21)) {
         maxPlayer = p;
       }
-      else if ((p.getHandValue() > maxPlayer.getHandValue()) && p.getHandValue() > 21) {
+      else if (((playerHandTotal > maxPlayer.getHandValue()) && (playerHandTotal > 21) && (p.printHand().contains("Ace")))) {
+        playerHasAce = playerHandTotal - 10;
+
+        if ((playerHasAce > maxPlayer.getHandValue()) && (playerHasAce <= 21)) {
+          maxPlayer = p;
+        }
+        else if ((playerHasAce > 21)) {
+          burstPlayer = p;
+        }
+      }
+
+      else if ((playerHandTotal > maxPlayer.getHandValue()) && (playerHandTotal > 21)) {
         burstPlayer = p;
       }
-    }
-    if (blackJack != null) {
-      return blackJack.getName() + " has blackjack!" + " " + blackJack.getName() + " wins";
-    }
-    else if(burstPlayer != null) {
-      return burstPlayer.getName() + " is burst!" + " " + maxPlayer.getName() + " wins";
+      else if ((playerHandTotal > maxPlayer.getHandValue()) && (playerHandTotal > 21)) {
+        burstPlayer = p;
+      }
+
+
+      if (blackJack != null) {
+        return blackJack.getName() + " has blackjack!" + " " + blackJack.getName() + " wins";
+      }
+      else if(burstPlayer != null) {
+        return burstPlayer.getName() + " is burst!" + " " + maxPlayer.getName() + " wins";
+      }
     }
     return maxPlayer.getName() + " wins";
+
   }
+
 }

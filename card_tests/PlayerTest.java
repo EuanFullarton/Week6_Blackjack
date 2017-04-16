@@ -13,6 +13,8 @@ public class PlayerTest {
   Card card2;
   Card card3;
   Card card4;
+  Card card5;
+  Card card6;
   WinChecker winChecker;
 
   @Before
@@ -23,6 +25,8 @@ public class PlayerTest {
     card2 = new Card(3, Suit.Spades);
     card3 = new Card(5, Suit.Hearts);
     card4 = new Card(6, Suit.Diamonds);
+    card5 = new Card(10, Suit.Clubs);
+    card6 = new Card(11, Suit.Hearts);
     player1.setHand(card1, card2);
     ArrayList<Player> players = new ArrayList<Player>();
     players.add(player1);
@@ -50,7 +54,6 @@ public class PlayerTest {
     assertEquals(5, player1.getHandValue());
   }
 
-
   @Test
   public void canPrintHand(){
     assertEquals("Two of Clubs, Three of Spades", player1.printHand());
@@ -70,14 +73,5 @@ public class PlayerTest {
     player1.hitMe(card4);
     assertEquals(15, player1.getHandValue());
   }
-
-  // @Test
-  // public void cannotHitWhenOver21() {
-  //   player1.setHand(card4, card4);
-  //   player1.hitMe(card4);
-  //   player1.hitMe(card4);
-  //   player1.hitMe(card4);
-  //   assertEquals("Burst!", player1.getHandValue());
-  // }
 
 }
