@@ -39,11 +39,11 @@ public class WinCheckerTest {
   }
 
   @Test
-  public void testClosestToTwentyOneAndNotBurst(){
+  public void closestToTwentyOneAndPlayerBurst(){
     player1.setHand(card1, card2);
     player2.setHand(card3, card4);
     player2.hitMe(card4);
-    assertEquals("Player1 wins", winChecker.closestToTwentyOne());
+    assertEquals("Player2 is burst! Player1 wins", winChecker.closestToTwentyOne());
   }
 
 

@@ -9,7 +9,7 @@ public class WinChecker {
 
   public WinChecker (ArrayList<Player> players) {
     this.players = players;
-    } 
+  } 
 
   public String highestHandTotal(){
 
@@ -27,15 +27,19 @@ public class WinChecker {
   public String closestToTwentyOne(){
 
     Player maxPlayer = players.get(0);
+    Player burstPlayer = null;
 
     for(Player p : players) {
-      if((p.getHandValue() > maxPlayer.getHandValue()) && p.getHandValue() <= 21){
+      if((p.getHandValue() > maxPlayer.getHandValue()) && p.getHandValue() <= 21) {
         maxPlayer = p;
       }
+      else if ((p.getHandValue() > maxPlayer.getHandValue()) && p.getHandValue() > 21) {
+        burstPlayer = p;
+      }
     }
-
+    if(burstPlayer != null) {
+      return burstPlayer.getName() + " is burst!" + " " + maxPlayer.getName() + " wins";
+    }
     return maxPlayer.getName() + " wins";
   }
-
-
 }
