@@ -46,5 +46,12 @@ public class WinCheckerTest {
     assertEquals("Player2 is burst! Player1 wins", winChecker.closestToTwentyOne());
   }
 
+  @Test
+  public void testBlackjack(){
+    player1.setHand(card5, card6);
+    player2.setHand(card1, card2);
+    assertEquals("Player1 has blackjack! Player1 wins", winChecker.closestToTwentyOne());
+  }
+
 
 }
