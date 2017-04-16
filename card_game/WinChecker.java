@@ -28,16 +28,23 @@ public class WinChecker {
 
     Player maxPlayer = players.get(0);
     Player burstPlayer = null;
+    Player blackJack = null;
 
     for(Player p : players) {
-      if((p.getHandValue() > maxPlayer.getHandValue()) && p.getHandValue() <= 21) {
+      if  (p.getHandValue() == 21) {
+        blackJack = p;
+      }
+      else if((p.getHandValue() > maxPlayer.getHandValue()) && p.getHandValue() <= 21) {
         maxPlayer = p;
       }
       else if ((p.getHandValue() > maxPlayer.getHandValue()) && p.getHandValue() > 21) {
         burstPlayer = p;
       }
     }
-    if(burstPlayer != null) {
+    if (blackJack != null) {
+      return blackJack.getName() + " has blackjack!" + " " + blackJack.getName() + " wins";
+    }
+    else if(burstPlayer != null) {
       return burstPlayer.getName() + " is burst!" + " " + maxPlayer.getName() + " wins";
     }
     return maxPlayer.getName() + " wins";
